@@ -1,0 +1,89 @@
+wait(0.2)
+game.StarterGui:SetCore("SendNotification", {
+Title = "A-Train Character"; -- the title 
+Text = "by l0ckerV5"; -- what the text says 
+Icon = "rbxassetid://18559562181"
+Duration = 5; -- how long the notification should in secounds
+})
+ 
+--> CUSTOM MOVESET
+ 
+-- Create the first Tool instance
+local tool1 = Instance.new("Tool")
+ 
+-- Set the tool's properties
+tool1.Name = "Bullet Speed"
+tool1.RequiresHandle = false  -- Set to true if you have a handle part
+tool1.CanBeDropped = true     -- Change as needed
+ 
+-- Add functionality to the tool
+tool1.Activated:Connect(function()
+    loadstring(game:HttpGet("https://pastebin.com/raw/q7XRCfLQ"))()
+end)
+ 
+-- Add the tool to the player's backpack
+tool1.Parent = game.Players.LocalPlayer.Backpack
+ 
+-- Create the second Tool instance
+local tool2 = Instance.new("Tool")
+ 
+-- Set the tool's properties
+tool2.Name = "Compound Dash"
+tool2.RequiresHandle = false  -- Set to true if you have a handle part
+tool2.CanBeDropped = true     -- Change as needed
+ 
+-- Add functionality to the tool
+tool2.Activated:Connect(function()
+    game.VirtualInputManager:SendKeyEvent(true, Enum.KeyCode.Q, false, game)
+end)
+ 
+-- Add the tool to the player's backpack
+tool2.Parent = game.Players.LocalPlayer.Backpack
+ 
+--> CHARACTER
+ 
+local Plr = game.Players.LocalPlayer
+local PlayerGui = Plr:WaitForChild("PlayerGui")
+ 
+local Hotbar = PlayerGui:WaitForChild("Hotbar"):WaitForChild("Backpack"):WaitForChild("Hotbar")
+local Ability1 = Hotbar:FindFirstChild("1")
+local Ability2 = Hotbar:FindFirstChild("2")
+local Ability3 = Hotbar:FindFirstChild("3")
+local Ability4 = Hotbar:FindFirstChild("4")
+local Ability5 = Hotbar:FindFirstChild("5")
+local Ability6 = Hotbar:FindFirstChild("6")
+local Ability7 = Hotbar:FindFirstChild("7")
+if Ability1 then Ability1:Destroy() end
+if Ability2 then Ability2:Destroy() end
+if Ability3 then Ability3:Destroy() end
+if Ability4 then Ability4:Destroy() end
+ 
+if Ability5 then
+    Ability5.Base.Number.Text = "1"
+    Ability5.Base.Number.Number.Text = "1"
+end
+if Ability6 then
+    Ability6.Base.Number.Text = "2"
+    Ability6.Base.Number.Number.Text = "2"
+end
+if Ability7 then
+    Ability7.Base.Number.Text = "3"
+    Ability7.Base.Number.Number.Text = "3"
+end
+ 
+local TopbarPlus = PlayerGui:WaitForChild("TopbarPlus")
+local TopbarContainer = TopbarPlus:WaitForChild("TopbarContainer")
+local UnnamedIcon = TopbarContainer:WaitForChild("UnnamedIcon")
+local DropdownContainer = UnnamedIcon:WaitForChild("DropdownContainer")
+local DropdownFrame = DropdownContainer:WaitForChild("DropdownFrame")
+local KJButton = DropdownFrame:WaitForChild("Purple")
+local IconButton = KJButton:WaitForChild("IconButton")
+local IconLabel = IconButton:WaitForChild("IconLabel")
+local IconImage = IconButton:WaitForChild("IconImage")
+ 
+PlayerGui.ScreenGui.MagicHealth.TextLabel.Text = "CANT STOP"
+ 
+while true do
+    wait(0.000001)
+    IconLabel.Text = "A-Train"
+    IconImage.Image = "rbxassetid://18559562181"
